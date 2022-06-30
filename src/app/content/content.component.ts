@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
+  
+  alumnos=[
+    'Diego Alvarez',
+    'Marcos Sanchez',
+    'Sandra Valle',
+    'Pedro Ruiz',
+    'Maria Ortiz',
+  ]
+  mostrar=false;
+  color:string='red';
   constructor() { }
 
   ngOnInit(): void {
