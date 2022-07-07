@@ -1,0 +1,17 @@
+<form [formGroup]="formulario" (ngSubmit)="submit($event)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+      <input type="email" formControlName="correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <span *ngIf="formulario.get('correo')?.errors?.['required']">(El mail no puede quedar vacío)</span>
+      <span *ngIf="formulario.get('correo')?.errors?.['correo']">(El mail no es válido)</span>
+      <div id="emailHelp" class="form-text">Nunca compartiremos tu dirección de correo con nadie</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <span *ngIf="formulario.get('contraseña')?.errors?.['required']">(La contraseña no puede quedar vacía)</span>
+      <input type="password" formControlName="contraseña" class="form-control" id="exampleInputPassword1">
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Ingresar</button>
+  </form>
